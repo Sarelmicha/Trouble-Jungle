@@ -70,7 +70,7 @@
                                     </mask>
                                 </variation>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="zNA-0e-RHc" userLabel="Bottom Holder">
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="zNA-0e-RHc" userLabel="Bottom Holder">
                                 <rect key="frame" x="36.333333333333343" y="772" width="341.66666666666663" height="100"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ejG-Be-MFR" userLabel="Moves Keeper">
@@ -109,9 +109,30 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="750" id="BK0-FZ-NxQ"/>
                                     <constraint firstAttribute="height" constant="100" id="c2w-Ym-OJN"/>
                                     <constraint firstItem="ejG-Be-MFR" firstAttribute="leading" secondItem="zNA-0e-RHc" secondAttribute="leading" id="yj8-VE-4fw"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BK0-FZ-NxQ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="BK0-FZ-NxQ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="BK0-FZ-NxQ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="BK0-FZ-NxQ"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
