@@ -1,24 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameController" customModule="TroubleJungle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Rl9-Ah-ErU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PCO-SX-cZi" userLabel="Cards Holder">
+                                <rect key="frame" x="17" y="198" width="380" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="A2I-va-BzR"/>
+                                    <constraint firstAttribute="width" constant="380" id="IQh-Nq-wT7"/>
+                                    <constraint firstAttribute="height" constant="350" id="Mfk-P9-W0h"/>
+                                    <constraint firstAttribute="width" constant="370" id="Pg1-AP-Prw"/>
+                                    <constraint firstAttribute="width" constant="600" id="TXt-cx-cN2"/>
+                                    <constraint firstAttribute="width" constant="250" id="cMm-dU-wM1"/>
+                                    <constraint firstAttribute="height" constant="500" id="g1Z-s9-KLF"/>
+                                    <constraint firstAttribute="height" constant="400" id="lNS-eT-llj"/>
+                                    <constraint firstAttribute="height" constant="750" id="qea-Qz-9BN"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="A2I-va-BzR"/>
+                                        <exclude reference="IQh-Nq-wT7"/>
+                                        <exclude reference="Mfk-P9-W0h"/>
+                                        <exclude reference="Pg1-AP-Prw"/>
+                                        <exclude reference="TXt-cx-cN2"/>
+                                        <exclude reference="cMm-dU-wM1"/>
+                                        <exclude reference="g1Z-s9-KLF"/>
+                                        <exclude reference="lNS-eT-llj"/>
+                                        <exclude reference="qea-Qz-9BN"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Mfk-P9-W0h"/>
+                                        <include reference="cMm-dU-wM1"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="Pg1-AP-Prw"/>
+                                        <include reference="lNS-eT-llj"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="A2I-va-BzR"/>
+                                        <include reference="IQh-Nq-wT7"/>
+                                        <include reference="g1Z-s9-KLF"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="TXt-cx-cN2"/>
+                                        <include reference="qea-Qz-9BN"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="zNA-0e-RHc" userLabel="Bottom Holder">
+                                <rect key="frame" x="36.333333333333343" y="772" width="341.66666666666663" height="100"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ejG-Be-MFR" userLabel="Moves Keeper">
+                                        <rect key="frame" x="0.0" y="30" width="156" height="70"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fS5-On-fn6">
+                                                <rect key="frame" x="0.0" y="0.0" width="116" height="70"/>
+                                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
+                                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSs-OY-UlH">
+                                                <rect key="frame" x="126" y="0.0" width="30" height="70"/>
+                                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
+                                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KN2-R4-znU" userLabel="Time Holder">
+                                        <rect key="frame" x="206" y="30" width="135.66666666666663" height="70"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hV-WQ-GSj">
+                                                <rect key="frame" x="0.0" y="0.0" width="95.666666666666671" height="70"/>
+                                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
+                                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd9-3j-K0i">
+                                                <rect key="frame" x="105.66666666666666" y="0.0" width="30" height="70"/>
+                                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
+                                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="c2w-Ym-OJN"/>
+                                    <constraint firstItem="ejG-Be-MFR" firstAttribute="leading" secondItem="zNA-0e-RHc" secondAttribute="leading" id="yj8-VE-4fw"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Rl9-Ah-ErU" secondAttribute="bottom" id="0k3-jo-nRl"/>
+                            <constraint firstItem="zNA-0e-RHc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="10" id="3l9-yY-3Bh"/>
+                            <constraint firstItem="Rl9-Ah-ErU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FSh-nv-VKE"/>
+                            <constraint firstItem="PCO-SX-cZi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Res-kq-1rx"/>
+                            <constraint firstItem="PCO-SX-cZi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TJp-nG-cAb"/>
+                            <constraint firstItem="Rl9-Ah-ErU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hUU-l1-cJE"/>
+                            <constraint firstItem="zNA-0e-RHc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j8t-sS-DnL"/>
+                            <constraint firstAttribute="trailing" secondItem="Rl9-Ah-ErU" secondAttribute="trailing" id="nw7-kv-4BL"/>
+                            <constraint firstItem="Rl9-Ah-ErU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o3k-YS-Nk3"/>
+                            <constraint firstItem="Rl9-Ah-ErU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wA6-T8-KlV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="game_LBL_moves" destination="fSs-OY-UlH" id="Ptk-1y-z8d"/>
+                        <outlet property="game_LBL_timer" destination="jd9-3j-K0i" id="6iY-TG-8g6"/>
+                        <outlet property="game_STACKVIEW_cardsHolder" destination="PCO-SX-cZi" id="OuK-kp-eaP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-10" y="93"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="626" height="876"/>
+    </resources>
 </document>
