@@ -17,11 +17,12 @@ class GameController: UIViewController {
     @IBOutlet weak var game_STACKVIEW_cardsHolder: UIStackView!
     
     
-    let NUM_OF_ROWS : Int = 4;
-    let NUM_OF_CARDS_PER_ROW : Int = 4;
+    
     let MAX_IDENTICAL_CARDS :Int = 2;
     
     
+    var numOfRows : Int!;
+    var numOfCardsPerRow : Int!;
     var numOfCards : Int!;
     var cards = [Card]();
     var firstCard : Card?;
@@ -36,7 +37,7 @@ class GameController: UIViewController {
         
         super.viewDidLoad();
         
-        initCards(numOfRows: NUM_OF_ROWS, numOfCardsPerRow: NUM_OF_CARDS_PER_ROW);
+        initCards(numOfRows: numOfRows, numOfCardsPerRow: numOfCardsPerRow);
         raffleCards();
         playBackgorundMusic();
         startTimer();
@@ -62,7 +63,7 @@ class GameController: UIViewController {
     
     func initCards(numOfRows : Int, numOfCardsPerRow : Int){
         
-        numOfCards = NUM_OF_ROWS * NUM_OF_CARDS_PER_ROW;
+        numOfCards = numOfRows * numOfCardsPerRow;
         
         for _ in 0 ..< numOfRows {
             let row : UIStackView = createRow();
@@ -73,7 +74,6 @@ class GameController: UIViewController {
                 //Adding newCard to cards Array ref
                 cards.append(newCard);
             }
-            
             game_STACKVIEW_cardsHolder.addArrangedSubview(row);
         }
     }
@@ -188,7 +188,8 @@ class GameController: UIViewController {
         
         
         if(isVictory()){
-            newGame();
+            self.performSegue(withIdentifier: "goToGameOverPage", sender: self)
+            //newGame();
         }
         
         //player can now guess again.
@@ -288,6 +289,19 @@ class GameController: UIViewController {
         } catch {
             //Error handling.
             print("Couldn't find sound file...");
+        }
+    }
+    
+    //MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goToGameOverPage"){
+            let gameOverPage = segue.destination as! GameOverController
+             //Set the game parameters
+            gameOverPage.time = timePassed;
+            gameOverPage.moves = moves
+            gameOverPage.lastGameNumOfRows = numOfRows
+            gameOverPage.lastGameNumOfCardsPerRow = numOfCardsPerRow
+          
         }
     }
     

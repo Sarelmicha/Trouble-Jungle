@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="58O-cT-LZE">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -7,19 +7,173 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Menu Controller-->
+        <scene sceneID="Gph-JV-okZ">
+            <objects>
+                <viewController storyboardIdentifier="menu_vc" id="58O-cT-LZE" userLabel="Menu Controller" customClass="MenuController" customModule="TroubleJungle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="awZ-ym-fOq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="lJH-l4-e58">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-02-7Jw" userLabel="Menu">
+                                <rect key="frame" x="25" y="200.66666666666663" width="364" height="441"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trouble Jungle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pha-9a-mLf">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="105"/>
+                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="90"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Puz-Jq-VWw">
+                                        <rect key="frame" x="0.0" y="135.00000000000003" width="364" height="82"/>
+                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
+                                        <state key="normal" title="Easy">
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onDifficultButtonPressed:" destination="58O-cT-LZE" eventType="touchUpInside" id="uoT-rf-fY0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6O-z8-Mp3">
+                                        <rect key="frame" x="0.0" y="247" width="364" height="82"/>
+                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
+                                        <state key="normal" title="Hard">
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onDifficultButtonPressed:" destination="58O-cT-LZE" eventType="touchUpInside" id="jSN-4d-eV5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftR-Af-39b">
+                                        <rect key="frame" x="0.0" y="359" width="364" height="82"/>
+                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
+                                        <state key="normal" title="Scrores">
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7Wm-02-7Jw" firstAttribute="centerY" secondItem="awZ-ym-fOq" secondAttribute="centerY" id="5jm-gA-m9Y"/>
+                            <constraint firstAttribute="trailing" secondItem="lJH-l4-e58" secondAttribute="trailing" id="YEv-ZO-uTm"/>
+                            <constraint firstAttribute="bottom" secondItem="lJH-l4-e58" secondAttribute="bottom" id="bx9-YZ-9UV"/>
+                            <constraint firstItem="7Wm-02-7Jw" firstAttribute="centerX" secondItem="awZ-ym-fOq" secondAttribute="centerX" id="cDK-bT-JPa"/>
+                            <constraint firstItem="lJH-l4-e58" firstAttribute="leading" secondItem="awZ-ym-fOq" secondAttribute="leading" id="gbQ-Bw-NYU"/>
+                            <constraint firstItem="lJH-l4-e58" firstAttribute="top" secondItem="awZ-ym-fOq" secondAttribute="top" id="lno-kb-FTE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nTb-ej-w1z"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FKp-4y-PV3"/>
+                    <connections>
+                        <outlet property="menu_BTN_easy" destination="Puz-Jq-VWw" id="oBD-ta-3XB"/>
+                        <outlet property="menu_BTN_hard" destination="H6O-z8-Mp3" id="sb3-CP-Sim"/>
+                        <outlet property="menu_BTN_scores" destination="ftR-Af-39b" id="XmH-55-PrB"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToGamePage" id="sQS-1e-imH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kyb-Go-gdv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-733" y="81"/>
+        </scene>
+        <!--Game Over Controller-->
+        <scene sceneID="wGj-L6-RrG">
+            <objects>
+                <viewController id="US4-op-GND" userLabel="Game Over Controller" customClass="GameOverController" customModule="TroubleJungle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9rG-EK-40R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="LFp-o6-s8Z">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ5-3Y-UoF">
+                                <rect key="frame" x="59" y="237.66666666666666" width="296.33333333333331" height="58.333333333333343"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m17-na-B9Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="108" height="58.333333333333336"/>
+                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="50"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWQ-IY-WWf">
+                                        <rect key="frame" x="158" y="0.0" width="138.33333333333337" height="58.333333333333336"/>
+                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="50"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="O5X-yX-uo2">
+                                <rect key="frame" x="116" y="316" width="182" height="210"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdQ-bh-lrP">
+                                        <rect key="frame" x="0.0" y="0.0" width="182" height="82"/>
+                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
+                                        <state key="normal" title="Restart">
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onOptionButtonPressed:" destination="US4-op-GND" eventType="touchUpInside" id="BBv-m2-acX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7IQ-gs-0fC">
+                                        <rect key="frame" x="0.0" y="128" width="182" height="82"/>
+                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
+                                        <state key="normal" title="New Game">
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onOptionButtonPressed:" destination="US4-op-GND" eventType="touchUpInside" id="wk0-ep-n9p"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="O5X-yX-uo2" firstAttribute="top" secondItem="ZQ5-3Y-UoF" secondAttribute="bottom" constant="20" id="UJ2-5o-ZV7"/>
+                            <constraint firstItem="ZQ5-3Y-UoF" firstAttribute="centerX" secondItem="9rG-EK-40R" secondAttribute="centerX" id="ZhH-fH-4jl"/>
+                            <constraint firstItem="LFp-o6-s8Z" firstAttribute="leading" secondItem="9rG-EK-40R" secondAttribute="leading" id="ZlB-8a-qGX"/>
+                            <constraint firstItem="O5X-yX-uo2" firstAttribute="centerX" secondItem="9rG-EK-40R" secondAttribute="centerX" id="fxJ-wr-Khj"/>
+                            <constraint firstAttribute="bottom" secondItem="LFp-o6-s8Z" secondAttribute="bottom" id="oEP-F4-IBF"/>
+                            <constraint firstItem="O5X-yX-uo2" firstAttribute="centerY" secondItem="9rG-EK-40R" secondAttribute="centerY" id="wZh-st-MmH"/>
+                            <constraint firstItem="LFp-o6-s8Z" firstAttribute="top" secondItem="9rG-EK-40R" secondAttribute="top" id="yVG-Zn-lJK"/>
+                            <constraint firstAttribute="trailing" secondItem="LFp-o6-s8Z" secondAttribute="trailing" id="zqT-9Y-5ao"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Yhh-WS-2qF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4oY-P8-q7W"/>
+                    <connections>
+                        <outlet property="gameover_BTN_newGame" destination="7IQ-gs-0fC" id="mMP-99-KMk"/>
+                        <outlet property="gameover_BTN_restart" destination="IdQ-bh-lrP" id="UbE-ug-q6m"/>
+                        <outlet property="gameover_LBL_moves" destination="kWQ-IY-WWf" id="UCe-wT-wgk"/>
+                        <outlet property="gameover_LBL_time" destination="m17-na-B9Z" id="TnN-XF-S4u"/>
+                        <segue destination="58O-cT-LZE" kind="show" identifier="goToMenuPage" id="rGG-Hq-cXt"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToGamePage" id="7K8-lc-sgf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d5u-Bz-MtP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="770" y="94"/>
+        </scene>
         <!--Game Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GameController" customModule="TroubleJungle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="game_vc" id="BYZ-38-t0r" customClass="GameController" customModule="TroubleJungle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Rl9-Ah-ErU">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PCO-SX-cZi" userLabel="Cards Holder">
-                                <rect key="frame" x="17" y="198" width="380" height="500"/>
+                                <rect key="frame" x="17" y="171" width="380" height="500"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="A2I-va-BzR"/>
                                     <constraint firstAttribute="width" constant="380" id="IQh-Nq-wT7"/>
@@ -71,7 +225,7 @@
                                 </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="bottom" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="zNA-0e-RHc" userLabel="Bottom Holder">
-                                <rect key="frame" x="36.333333333333343" y="772" width="341.66666666666663" height="100"/>
+                                <rect key="frame" x="36.333333333333343" y="718" width="341.66666666666663" height="100"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ejG-Be-MFR" userLabel="Moves Keeper">
                                         <rect key="frame" x="0.0" y="30" width="156" height="70"/>
@@ -150,18 +304,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="QCf-xk-pe0"/>
                     <connections>
                         <outlet property="game_LBL_moves" destination="fSs-OY-UlH" id="Ptk-1y-z8d"/>
                         <outlet property="game_LBL_timer" destination="jd9-3j-K0i" id="6iY-TG-8g6"/>
                         <outlet property="game_STACKVIEW_cardsHolder" destination="PCO-SX-cZi" id="OuK-kp-eaP"/>
+                        <segue destination="US4-op-GND" kind="show" identifier="goToGameOverPage" id="nML-7q-9Tf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10" y="93"/>
+            <point key="canvasLocation" x="-23" y="80"/>
         </scene>
     </scenes>
     <resources>
         <image name="background" width="626" height="876"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7K8-lc-sgf"/>
+    </inferredMetricsTieBreakers>
 </document>
