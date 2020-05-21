@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 class MyCustomCell: UITableViewCell {
+    
+    //Cell class for table view
   
     @IBOutlet weak var cell_LBL_score: UILabel!
     @IBOutlet weak var cell_LBL_name: UILabel!

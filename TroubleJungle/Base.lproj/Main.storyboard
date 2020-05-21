@@ -122,7 +122,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crocodile" translatesAutoresizingMaskIntoConstraints="NO" id="tFR-jZ-86Z">
-                                                    <rect key="frame" x="9.9999999999999982" y="0.0" width="31.333333333333442" height="52.333333333333336"/>
+                                                    <rect key="frame" x="9.9999999999999982" y="0.0" width="31.333333333333329" height="52.333333333333336"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
