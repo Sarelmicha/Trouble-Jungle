@@ -21,6 +21,7 @@ class GameController: UIViewController {
     let MAX_IDENTICAL_CARDS :Int = 2;
     
     
+    //Variables
     var numOfRows : Int!;
     var numOfCardsPerRow : Int!;
     var numOfCards : Int!;
