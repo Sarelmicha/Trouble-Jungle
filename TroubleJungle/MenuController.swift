@@ -36,6 +36,12 @@ class MenuController: UIViewController {
     }
     
     
+    @IBAction func onScoresButtonPressed(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "goToScoresPage", sender: self)
+    }
+    
+    
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "goToGamePage"){
@@ -50,6 +56,9 @@ class MenuController: UIViewController {
                 gamePage.numOfRows = 4;
                 gamePage.numOfCardsPerRow = 4;
             }
+        } else if(segue.identifier == "goToScoresPage"){
+            _ = segue.destination as! ScoresController
+            
         }
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="58O-cT-LZE">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,14 +12,14 @@
             <objects>
                 <viewController storyboardIdentifier="menu_vc" id="58O-cT-LZE" userLabel="Menu Controller" customClass="MenuController" customModule="TroubleJungle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="awZ-ym-fOq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="lJH-l4-e58">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-02-7Jw" userLabel="Menu">
-                                <rect key="frame" x="5.5" y="113" width="364" height="441"/>
+                                <rect key="frame" x="25" y="227.66666666666663" width="364" height="441"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trouble Jungle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pha-9a-mLf">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="105"/>
@@ -28,7 +28,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Puz-Jq-VWw">
-                                        <rect key="frame" x="0.0" y="135" width="364" height="82"/>
+                                        <rect key="frame" x="0.0" y="135.00000000000003" width="364" height="82"/>
                                         <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
                                         <state key="normal" title="Easy">
                                             <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -53,6 +53,9 @@
                                         <state key="normal" title="Scrores">
                                             <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onScoresButtonPressed:" destination="58O-cT-LZE" eventType="touchUpInside" id="tDh-TG-nEo"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -74,7 +77,7 @@
                         <outlet property="menu_BTN_hard" destination="H6O-z8-Mp3" id="sb3-CP-Sim"/>
                         <outlet property="menu_BTN_scores" destination="ftR-Af-39b" id="XmH-55-PrB"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToGamePage" modalPresentationStyle="fullScreen" id="sQS-1e-imH"/>
-                        <segue destination="6Ce-6Z-uBG" kind="presentation" modalPresentationStyle="fullScreen" id="JZl-LF-BN0"/>
+                        <segue destination="6Ce-6Z-uBG" kind="presentation" identifier="goToScoresPage" modalPresentationStyle="fullScreen" id="JZl-LF-BN0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kyb-Go-gdv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -86,49 +89,107 @@
             <objects>
                 <viewController id="6Ce-6Z-uBG" userLabel="Score Controller" customClass="ScoresController" customModule="TroubleJungle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mDC-bo-tUJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="V21-QE-oBF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NT8-co-gP5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="score_cell" id="T2I-Jg-mKE" customClass="MyCustomCell" customModule="TroubleJungle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="52.333332061767578"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T2I-Jg-mKE" id="Tx4-zG-thK">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="52.333332061767578"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBD-V6-pNY" userLabel="CellLBL score">
+                                                    <rect key="frame" x="342" y="15.666666666666664" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APl-c4-ym4" userLabel="CellLBL name">
+                                                    <rect key="frame" x="51.333333333333343" y="10.999999999999998" width="311.66666666666663" height="30.333333333333329"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="3fS-ll-LJr"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crocodile" translatesAutoresizingMaskIntoConstraints="NO" id="tFR-jZ-86Z">
+                                                    <rect key="frame" x="9.9999999999999982" y="0.0" width="31.333333333333442" height="52.333333333333336"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tFR-jZ-86Z" firstAttribute="top" secondItem="Tx4-zG-thK" secondAttribute="top" id="0H0-G3-rfk"/>
+                                                <constraint firstItem="APl-c4-ym4" firstAttribute="centerY" secondItem="tFR-jZ-86Z" secondAttribute="centerY" id="11r-vM-Uan"/>
+                                                <constraint firstItem="APl-c4-ym4" firstAttribute="leading" secondItem="tFR-jZ-86Z" secondAttribute="trailing" constant="10" id="GEI-Nl-Nbb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="GBD-V6-pNY" secondAttribute="trailing" constant="10" id="Lno-IE-2Vi"/>
+                                                <constraint firstItem="tFR-jZ-86Z" firstAttribute="width" secondItem="APl-c4-ym4" secondAttribute="width" multiplier="0.1" id="Spc-Rc-F2k"/>
+                                                <constraint firstItem="APl-c4-ym4" firstAttribute="centerX" secondItem="Tx4-zG-thK" secondAttribute="centerX" id="T8L-hU-wQ8"/>
+                                                <constraint firstAttribute="bottom" secondItem="tFR-jZ-86Z" secondAttribute="bottom" id="gpA-Wc-K00"/>
+                                                <constraint firstItem="APl-c4-ym4" firstAttribute="top" secondItem="Tx4-zG-thK" secondAttribute="topMargin" id="ith-AT-fL4"/>
+                                                <constraint firstItem="GBD-V6-pNY" firstAttribute="centerY" secondItem="Tx4-zG-thK" secondAttribute="centerY" id="kCc-Ul-6fy"/>
+                                                <constraint firstItem="tFR-jZ-86Z" firstAttribute="leading" secondItem="Tx4-zG-thK" secondAttribute="leading" constant="10" id="u3W-zl-gbN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cell_IMG_scoreImage" destination="tFR-jZ-86Z" id="T1l-ZR-uyg"/>
+                                            <outlet property="cell_LBL_name" destination="APl-c4-ym4" id="WYS-x7-UGP"/>
+                                            <outlet property="cell_LBL_score" destination="GBD-V6-pNY" id="6d3-hA-chZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="V21-QE-oBF" secondAttribute="bottom" id="4De-ND-e78"/>
+                            <constraint firstAttribute="bottom" secondItem="NT8-co-gP5" secondAttribute="bottom" id="5n5-bs-cvg"/>
                             <constraint firstAttribute="trailing" secondItem="V21-QE-oBF" secondAttribute="trailing" id="DDP-Z3-C4o"/>
+                            <constraint firstItem="NT8-co-gP5" firstAttribute="leading" secondItem="mDC-bo-tUJ" secondAttribute="leading" id="Dhc-Qe-Kvh"/>
+                            <constraint firstAttribute="trailing" secondItem="NT8-co-gP5" secondAttribute="trailing" id="TUr-om-AcY"/>
+                            <constraint firstItem="NT8-co-gP5" firstAttribute="top" secondItem="mDC-bo-tUJ" secondAttribute="top" id="jTD-5Y-EDV"/>
                             <constraint firstItem="V21-QE-oBF" firstAttribute="top" secondItem="mDC-bo-tUJ" secondAttribute="top" id="qWC-4z-38t"/>
                             <constraint firstItem="V21-QE-oBF" firstAttribute="leading" secondItem="mDC-bo-tUJ" secondAttribute="leading" id="ty0-sW-jF0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C6f-14-6Gm"/>
                     </view>
+                    <connections>
+                        <outlet property="scores_LST_scores" destination="NT8-co-gP5" id="Sp9-X0-Dd9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uox-VT-Hy8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1306" y="876"/>
+            <point key="canvasLocation" x="-959" y="880"/>
         </scene>
         <!--Game Over Controller-->
         <scene sceneID="wGj-L6-RrG">
             <objects>
                 <viewController id="US4-op-GND" userLabel="Game Over Controller" customClass="GameOverController" customModule="TroubleJungle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9rG-EK-40R">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="LFp-o6-s8Z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ5-3Y-UoF">
-                                <rect key="frame" x="39.5" y="150" width="296.5" height="58.5"/>
+                                <rect key="frame" x="59" y="264.66666666666669" width="296.33333333333331" height="58.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m17-na-B9Z">
-                                        <rect key="frame" x="0.0" y="0.0" width="108" height="58.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="108" height="58.333333333333336"/>
                                         <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="50"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWQ-IY-WWf">
-                                        <rect key="frame" x="158" y="0.0" width="138.5" height="58.5"/>
+                                        <rect key="frame" x="158" y="0.0" width="138.33333333333337" height="58.333333333333336"/>
                                         <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="50"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -136,7 +197,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="O5X-yX-uo2">
-                                <rect key="frame" x="96.5" y="228.5" width="182" height="210"/>
+                                <rect key="frame" x="116" y="343" width="182" height="210"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdQ-bh-lrP">
                                         <rect key="frame" x="0.0" y="0.0" width="182" height="82"/>
@@ -193,14 +254,14 @@
             <objects>
                 <viewController storyboardIdentifier="game_vc" id="BYZ-38-t0r" customClass="GameController" customModule="TroubleJungle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Rl9-Ah-ErU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PCO-SX-cZi" userLabel="Cards Holder">
-                                <rect key="frame" x="-2.5" y="83.5" width="380" height="500"/>
+                                <rect key="frame" x="17" y="198" width="380" height="500"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="A2I-va-BzR"/>
                                     <constraint firstAttribute="width" constant="380" id="IQh-Nq-wT7"/>
@@ -252,19 +313,19 @@
                                 </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zNA-0e-RHc" userLabel="Bottom Holder">
-                                <rect key="frame" x="-6" y="577" width="387" height="100"/>
+                                <rect key="frame" x="14" y="772" width="386.33333333333331" height="100"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ejG-Be-MFR" userLabel="Moves Keeper">
-                                        <rect key="frame" x="0.0" y="41.5" width="197" height="58.5"/>
+                                        <rect key="frame" x="0.0" y="41.666666666666629" width="196.66666666666666" height="58.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fS5-On-fn6">
-                                                <rect key="frame" x="0.0" y="0.0" width="97" height="58.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="96.666666666666671" height="58.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="50"/>
                                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSs-OY-UlH">
-                                                <rect key="frame" x="107" y="0.0" width="90" height="58.5"/>
+                                                <rect key="frame" x="106.66666666666669" y="0.0" width="90" height="58.333333333333336"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="cKR-up-zoa"/>
                                                 </constraints>
@@ -275,16 +336,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KN2-R4-znU" userLabel="Time Holder">
-                                        <rect key="frame" x="207" y="41.5" width="180" height="58.5"/>
+                                        <rect key="frame" x="206.66666666666669" y="41.666666666666629" width="179.66666666666669" height="58.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hV-WQ-GSj">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="58.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="79.666666666666671" height="58.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="50"/>
                                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd9-3j-K0i">
-                                                <rect key="frame" x="90" y="0.0" width="90" height="58.5"/>
+                                                <rect key="frame" x="89.666666666666657" y="0.0" width="90" height="58.333333333333336"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="UY3-hO-ndx"/>
                                                 </constraints>
@@ -352,6 +413,7 @@
     </scenes>
     <resources>
         <image name="background" width="626" height="876"/>
+        <image name="crocodile" width="392" height="470"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sQS-1e-imH"/>
