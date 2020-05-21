@@ -16,6 +16,7 @@
 		C77A2AA32473D2D900FA5ED9 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A2AA22473D2D900FA5ED9 /* MenuController.swift */; };
 		C77A2AA52473E83600FA5ED9 /* GameOverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A2AA42473E83600FA5ED9 /* GameOverController.swift */; };
 		C78C068A245F37A000ABFFED /* Classic Game Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C78C0689245F37A000ABFFED /* Classic Game Music.mp3 */; };
+		C7F27A382476B77700D03DBF /* ScoresController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F27A372476B77700D03DBF /* ScoresController.swift */; };
 		C7FD88D2244D818D00BD1BE9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FD88D1244D818D00BD1BE9 /* Card.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		C77A2AA22473D2D900FA5ED9 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		C77A2AA42473E83600FA5ED9 /* GameOverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverController.swift; sourceTree = "<group>"; };
 		C78C0689245F37A000ABFFED /* Classic Game Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Classic Game Music.mp3"; sourceTree = "<group>"; };
+		C7F27A372476B77700D03DBF /* ScoresController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresController.swift; sourceTree = "<group>"; };
 		C7FD88D1244D818D00BD1BE9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 				C709052B244A2C57004EEA41 /* SceneDelegate.swift */,
 				C709052D244A2C57004EEA41 /* GameController.swift */,
 				C77A2AA22473D2D900FA5ED9 /* MenuController.swift */,
+				C7F27A372476B77700D03DBF /* ScoresController.swift */,
 				C77A2AA42473E83600FA5ED9 /* GameOverController.swift */,
 				C7FD88D1244D818D00BD1BE9 /* Card.swift */,
 				C709052F244A2C57004EEA41 /* Main.storyboard */,
@@ -164,6 +167,7 @@
 				C709052E244A2C57004EEA41 /* GameController.swift in Sources */,
 				C7FD88D2244D818D00BD1BE9 /* Card.swift in Sources */,
 				C709052A244A2C57004EEA41 /* AppDelegate.swift in Sources */,
+				C7F27A382476B77700D03DBF /* ScoresController.swift in Sources */,
 				C709052C244A2C57004EEA41 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
