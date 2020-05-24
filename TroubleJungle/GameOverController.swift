@@ -57,7 +57,7 @@ class GameOverController: UIViewController {
     
           
         } else if(segue.identifier == "goToMenuPage"){
-             let menuPage = segue.destination as! MenuController
+            _ = segue.destination as! MenuController
         }
         
     }
