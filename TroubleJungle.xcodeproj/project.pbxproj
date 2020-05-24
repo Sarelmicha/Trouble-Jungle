@@ -13,6 +13,7 @@
 		C7090531244A2C57004EEA41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C709052F244A2C57004EEA41 /* Main.storyboard */; };
 		C7090533244A2C58004EEA41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7090532244A2C58004EEA41 /* Assets.xcassets */; };
 		C7090536244A2C58004EEA41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7090534244A2C58004EEA41 /* LaunchScreen.storyboard */; };
+		C74FB30D247A6155003A7965 /* HighScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FB30C247A6155003A7965 /* HighScore.swift */; };
 		C77A2AA32473D2D900FA5ED9 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A2AA22473D2D900FA5ED9 /* MenuController.swift */; };
 		C77A2AA52473E83600FA5ED9 /* GameOverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77A2AA42473E83600FA5ED9 /* GameOverController.swift */; };
 		C78C068A245F37A000ABFFED /* Classic Game Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C78C0689245F37A000ABFFED /* Classic Game Music.mp3 */; };
@@ -30,6 +31,7 @@
 		C7090532244A2C58004EEA41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7090535244A2C58004EEA41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7090537244A2C58004EEA41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C74FB30C247A6155003A7965 /* HighScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScore.swift; sourceTree = "<group>"; };
 		C77A2AA22473D2D900FA5ED9 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		C77A2AA42473E83600FA5ED9 /* GameOverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverController.swift; sourceTree = "<group>"; };
 		C78C0689245F37A000ABFFED /* Classic Game Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Classic Game Music.mp3"; sourceTree = "<group>"; };
@@ -75,12 +77,13 @@
 				C77A2AA22473D2D900FA5ED9 /* MenuController.swift */,
 				C7F27A372476B77700D03DBF /* ScoresController.swift */,
 				C77A2AA42473E83600FA5ED9 /* GameOverController.swift */,
+				C74FB30C247A6155003A7965 /* HighScore.swift */,
 				C7FD88D1244D818D00BD1BE9 /* Card.swift */,
+				C7F27A3B2476C51900D03DBF /* MyCustomCell.swift */,
 				C709052F244A2C57004EEA41 /* Main.storyboard */,
 				C7090532244A2C58004EEA41 /* Assets.xcassets */,
 				C7090534244A2C58004EEA41 /* LaunchScreen.storyboard */,
 				C7090537244A2C58004EEA41 /* Info.plist */,
-				C7F27A3B2476C51900D03DBF /* MyCustomCell.swift */,
 			);
 			path = TroubleJungle;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				C77A2AA52473E83600FA5ED9 /* GameOverController.swift in Sources */,
 				C709052E244A2C57004EEA41 /* GameController.swift in Sources */,
 				C7FD88D2244D818D00BD1BE9 /* Card.swift in Sources */,
+				C74FB30D247A6155003A7965 /* HighScore.swift in Sources */,
 				C709052A244A2C57004EEA41 /* AppDelegate.swift in Sources */,
 				C7F27A382476B77700D03DBF /* ScoresController.swift in Sources */,
 				C7F27A3C2476C51900D03DBF /* MyCustomCell.swift in Sources */,

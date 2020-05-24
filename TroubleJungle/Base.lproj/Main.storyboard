@@ -97,7 +97,7 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NT8-co-gP5">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="score_cell" id="T2I-Jg-mKE" customClass="MyCustomCell" customModule="TroubleJungle" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="52.333332061767578"/>
@@ -109,7 +109,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBD-V6-pNY" userLabel="CellLBL score">
                                                     <rect key="frame" x="342" y="15.666666666666664" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APl-c4-ym4" userLabel="CellLBL name">
@@ -118,11 +118,11 @@
                                                         <constraint firstAttribute="height" constant="30" id="3fS-ll-LJr"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crocodile" translatesAutoresizingMaskIntoConstraints="NO" id="tFR-jZ-86Z">
-                                                    <rect key="frame" x="9.9999999999999982" y="0.0" width="31.333333333333329" height="52.333333333333336"/>
+                                                    <rect key="frame" x="9.9999999999999982" y="0.0" width="31.333333333333442" height="52.333333333333336"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -138,6 +138,7 @@
                                                 <constraint firstItem="tFR-jZ-86Z" firstAttribute="leading" secondItem="Tx4-zG-thK" secondAttribute="leading" constant="10" id="u3W-zl-gbN"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="cell_IMG_scoreImage" destination="tFR-jZ-86Z" id="T1l-ZR-uyg"/>
                                             <outlet property="cell_LBL_name" destination="APl-c4-ym4" id="WYS-x7-UGP"/>
