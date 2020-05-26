@@ -18,7 +18,7 @@ class GameController: UIViewController {
     
     
     
-    let MAX_IDENTICAL_CARDS :Int = 2;
+    let MAX_IDENTICAL_CARDS :Int = 2
     
     
     //Variables
@@ -35,6 +35,7 @@ class GameController: UIViewController {
     var timerHelper : TimerHelper!
     var audioPlayer : AVAudioPlayer!
     var name : String!
+    var myLocation : MyLocation!
     
     
     override func viewDidLoad() {
@@ -43,9 +44,9 @@ class GameController: UIViewController {
         
         timerHelper = TimerHelper()
         initCards(numOfRows: numOfRows, numOfCardsPerRow: numOfCardsPerRow);
-        raffleCards();
-        playBackgorundMusic();
-        startTimer();
+        raffleCards()
+        playBackgorundMusic()
+        startTimer()
         
     }
     
@@ -53,12 +54,13 @@ class GameController: UIViewController {
         
         if(!isClickable){
             // Player can't click a card - waiting for other cards to flip
-            return;
+            return
         }
         
         if(sender.isFlipped){
             //Same card has been clicked.
-            return;
+            return
+            
         }
         
         
@@ -71,13 +73,13 @@ class GameController: UIViewController {
         numOfCards = numOfRows * numOfCardsPerRow;
         
         for _ in 0 ..< numOfRows {
-            let row : UIStackView = createRow();
+            let row : UIStackView = createRow()
             for _ in 0 ..< numOfCardsPerRow {
-                let newCard : Card = createCard();
+                let newCard : Card = createCard()
                 //Adding newCard to row Stackview
-                row.addArrangedSubview(newCard);
+                row.addArrangedSubview(newCard)
                 //Adding newCard to cards Array ref
-                cards.append(newCard);
+                cards.append(newCard)
             }
             game_STACKVIEW_cardsHolder.addArrangedSubview(row);
         }
@@ -85,7 +87,7 @@ class GameController: UIViewController {
     
     func createCard () -> Card {
         
-        let newCard : Card = Card();
+        let newCard : Card = Card()
         newCard.addTarget(self, action: #selector(flip), for: .touchUpInside);
         
         return newCard;
@@ -93,14 +95,14 @@ class GameController: UIViewController {
     
     func createRow () -> UIStackView {
         
-        let SPACING: CGFloat = 10;
-        let row = UIStackView();
+        let SPACING: CGFloat = 10
+        let row = UIStackView()
         
-        row.axis = .horizontal;
-        row.alignment = .fill;
-        row.distribution = .fillEqually;
-        row.spacing = SPACING;
-        row.contentMode = .scaleToFill;
+        row.axis = .horizontal
+        row.alignment = .fill
+        row.distribution = .fillEqually
+        row.spacing = SPACING
+        row.contentMode = .scaleToFill
         row.translatesAutoresizingMaskIntoConstraints = false
         
         return row;
@@ -108,10 +110,10 @@ class GameController: UIViewController {
     
     func raffleCards()  {
         
-        var images = [#imageLiteral(resourceName: "sloth"),#imageLiteral(resourceName: "monkey"),#imageLiteral(resourceName: "gorilla"),#imageLiteral(resourceName: "beatle"),#imageLiteral(resourceName: "crocodile"),#imageLiteral(resourceName: "tiger"),#imageLiteral(resourceName: "zebra"),#imageLiteral(resourceName: "frog")];
-        var size = numOfCards / 2;
-        var slots = [Int](repeating: 0, count: size);
-        var randomIndex : Int;
+        var images = [#imageLiteral(resourceName: "sloth"),#imageLiteral(resourceName: "monkey"),#imageLiteral(resourceName: "gorilla"),#imageLiteral(resourceName: "beatle"),#imageLiteral(resourceName: "crocodile"),#imageLiteral(resourceName: "tiger"),#imageLiteral(resourceName: "zebra"),#imageLiteral(resourceName: "frog")]
+        var size = numOfCards / 2
+        var slots = [Int](repeating: 0, count: size)
+        var randomIndex : Int
         
         
         for card in cards{
@@ -122,13 +124,13 @@ class GameController: UIViewController {
                 
                 if(slots[randomIndex] < MAX_IDENTICAL_CARDS){
                     raffle = false;
-                    slots[randomIndex] += 1;
-                    card.front = images[randomIndex];
+                    slots[randomIndex] += 1
+                    card.front = images[randomIndex]
                 } else {
                     // The same card has already asign twice
-                    images.remove(at: randomIndex);
-                    slots.remove(at: randomIndex);
-                    size -= 1;
+                    images.remove(at: randomIndex)
+                    slots.remove(at: randomIndex)
+                    size -= 1
                     
                 }
             }
@@ -141,7 +143,7 @@ class GameController: UIViewController {
     func addMove() {
         
         moves += 1;
-        game_LBL_moves.text  = String(moves);
+        game_LBL_moves.text  = String(moves)
         
     }
     
@@ -149,20 +151,20 @@ class GameController: UIViewController {
         
         if(firstCard == nil){
             //flip the first card
-            sender.flip();
+            sender.flip()
             
-            firstCard = sender;
+            firstCard = sender
             
             //flip first card to reveal his image.
             
         } else {
             
             //flip second card to reveal his image.
-            sender.flip();
+            sender.flip()
             
             isClickable = false;
             
-            checkForMatches(sender: sender);
+            checkForMatches(sender: sender)
             
         }
     }
@@ -172,24 +174,24 @@ class GameController: UIViewController {
         if(sender.front == firstCard!.front){
             
             //Guess was correct
-            playerGuessedRight(sender: sender);
+            playerGuessedRight(sender: sender)
             
         } else {
             
             //Guess was incorrect
-            playerGuessedWrong(sender: sender);
+            playerGuessedWrong(sender: sender)
         }
     }
     
     func playerGuessedRight(sender : Card){
         
         
-        sender.remove();
-        firstCard?.remove();
+        sender.remove()
+        firstCard?.remove()
         
-        addMove();
+        addMove()
         
-        firstCard = nil;
+        firstCard = nil
         
         
         if(isVictory()){
@@ -205,19 +207,19 @@ class GameController: UIViewController {
     
     func playerGuessedWrong(sender : Card) {
         
-        addMove();
+        addMove()
         //Delay for 2 seconds when revealing the second card.
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.2 ) {
             
             // flip the cards back
-            self.firstCard!.flip();
-            sender.flip();
+            self.firstCard!.flip()
+            sender.flip()
             
             // Player can guess again
-            self.isClickable = true;
+            self.isClickable = true
             
             // Reset first card
-            self.firstCard = nil;
+            self.firstCard = nil
             
         }
     }
@@ -226,8 +228,8 @@ class GameController: UIViewController {
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             
-            self.timePassed += 1;
-            self.timePassedText =  self.timerHelper.convertTimeToMinutesAndSeconds(timePassed: self.timePassed);
+            self.timePassed += 1
+            self.timePassedText =  self.timerHelper.convertTimeToMinutesAndSeconds(timePassed: self.timePassed)
             self.game_LBL_timer.text = self.timePassedText
             
             
@@ -243,28 +245,28 @@ class GameController: UIViewController {
         
         for card in cards {
             if(!card.isFlipped){
-                return false;
+                return false
             }
         }
-        return true;
+        return true
     }
     
     
     func newGame () {
         
-        resertCards();
-        resetMoves();
-        resetTimer();
-        resetFliped();
-        raffleCards();
+        resertCards()
+        resetMoves()
+        resetTimer()
+        resetFliped()
+        raffleCards()
     }
     
     func resertCards() {
         
         for card in cards {
             
-            card.flip();
-            card.add();
+            card.flip()
+            card.add()
         }
     }
     
@@ -276,30 +278,30 @@ class GameController: UIViewController {
     
     func resetMoves() {
         
-        moves = 0;
-        game_LBL_moves.text  = String(moves);
+        moves = 0
+        game_LBL_moves.text  = String(moves)
         
     }
     
     func resetTimer() {
         
-        timePassed = 0;
-        game_LBL_timer.text  = String(timePassed);
+        timePassed = 0
+        game_LBL_timer.text  = String(timePassed)
         
     }
     
     func playBackgorundMusic() {
-        let pathToSound = Bundle.main.path(forResource: "Classic Game Music", ofType: "mp3")!;
-        let url = URL(fileURLWithPath: pathToSound);
+        let pathToSound = Bundle.main.path(forResource: "Classic Game Music", ofType: "mp3")!
+        let url = URL(fileURLWithPath: pathToSound)
         
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url);
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
             //play background music in loop
-            audioPlayer.numberOfLoops = -1;
+            audioPlayer.numberOfLoops = -1
             audioPlayer.play();
         } catch {
             //Error handling.
-            print("Couldn't find sound file...");
+            print("Couldn't find sound file...")
         }
     }
     
@@ -308,12 +310,11 @@ class GameController: UIViewController {
         if(segue.identifier == "goToGameOverPage"){
             let gameOverPage = segue.destination as! GameOverController
             //Set the game parameters
-            gameOverPage.time = timePassed;
+            gameOverPage.time = timePassed
             gameOverPage.moves = moves
             gameOverPage.lastGameNumOfRows = numOfRows
             gameOverPage.lastGameNumOfCardsPerRow = numOfCardsPerRow
-            gameOverPage.name = name
-            
+            gameOverPage.userHighScore = HighScore(name: name, time: timePassed, location: myLocation)
         }
     }
     
