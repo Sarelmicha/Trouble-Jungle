@@ -13,34 +13,14 @@ class ScoresController: UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBOutlet weak var scores_LST_scores: UITableView!
     
     var animalsImages = [#imageLiteral(resourceName: "crocodile"),#imageLiteral(resourceName: "zebra"),#imageLiteral(resourceName: "sloth"),#imageLiteral(resourceName: "tiger"),#imageLiteral(resourceName: "gorilla"),#imageLiteral(resourceName: "monkey"),#imageLiteral(resourceName: "frog"),#imageLiteral(resourceName: "beatle")]
-
-    
-    var highScores = [HighScore(name: "Sarel",score : 500),
-                      HighScore(name: "Mor",score : 450),
-                      HighScore(name: "Hod",score : 300),
-                      HighScore(name: "Eli",score : 300),
-                      HighScore(name: "Shai",score : 280),
-                      HighScore(name: "Noa",score : 250),
-                      HighScore(name: "Kepler",score : 250),
-                      HighScore(name: "Sarel",score : 220),
-                      HighScore(name: "Asaf",score : 200),
-                      HighScore(name: "Guy",score : 190),
-                      HighScore(name: "Shemsh",score : 100),
-                      HighScore(name: "Ori",score : 60),
-                      HighScore(name: "Klopper",score : 30),
-                      HighScore(name: "Hydi",score : 20),
-                      
-    ]
-    
-    
-    
-  
-    
+    var highScores : [HighScore]!
     let cellReuseIdentifier = "score_cell"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Read from local storage the highscores
+        highScores = MyLocalStorage.getDataFromLocalStorage()
         setupList()
         
         // Do any additional setup after loading the view.
@@ -59,7 +39,7 @@ class ScoresController: UIViewController, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell : MyCustomCell? = self.scores_LST_scores.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as? MyCustomCell
         
-        cell?.cell_LBL_score?.text = String(self.highScores[indexPath.row].score)
+        cell?.cell_LBL_score?.text = String(self.highScores[indexPath.row].time)
         cell?.cell_LBL_name?.text = String(self.highScores[indexPath.row].name)
         cell?.cell_IMG_scoreImage?.image = animalsImages[indexPath.row % animalsImages.count]
         

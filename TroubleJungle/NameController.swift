@@ -15,6 +15,7 @@ class NameController: UIViewController {
     let MAX_NAME_LENGTH : Int = 10
     var difficult : String!
     var name : String!
+    var myLocation : MyLocation!
     
     @IBOutlet weak var name_TEXTFIELD_nameHolder: UITextField!
     @IBOutlet weak var name_BTN_readyButton: UIButton!
@@ -59,6 +60,7 @@ class NameController: UIViewController {
             }
             
             gamePage.name = name
+            gamePage.myLocation = myLocation
             
         }
         

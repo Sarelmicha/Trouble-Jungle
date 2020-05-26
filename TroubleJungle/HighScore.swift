@@ -9,17 +9,19 @@
 import Foundation
 import UIKit
 
-class HighScore {
+class HighScore : Codable{ 
     
     var name : String
-    var score : Int
+    var time : Int
+    var location : MyLocation
 
     
-    init(name : String, score : Int) {
+    init(name : String, time : Int, location: MyLocation) {
         
         self.name = name
-        self.score = score
-      
+        self.time = time
+        self.location = location
+        
     }
     
 }
