@@ -22,22 +22,26 @@ class GameController: UIViewController {
     
     
     //Variables
-    var numOfRows : Int!;
-    var numOfCardsPerRow : Int!;
-    var numOfCards : Int!;
-    var cards = [Card]();
-    var firstCard : Card?;
-    var raffle : Bool = true;
-    var isClickable : Bool = true;
-    var moves : Int = 0;
-    var timePassed : Int = 0;
-    var audioPlayer : AVAudioPlayer!;
+    var numOfRows : Int!
+    var numOfCardsPerRow : Int!
+    var numOfCards : Int!
+    var cards = [Card]()
+    var firstCard : Card?
+    var raffle : Bool = true
+    var isClickable : Bool = true
+    var moves : Int = 0
+    var timePassed : Int = 0
+    var timePassedText : String = "0"
+    var timerHelper : TimerHelper!
+    var audioPlayer : AVAudioPlayer!
+    var name : String!
     
     
     override func viewDidLoad() {
         
         super.viewDidLoad();
         
+        timerHelper = TimerHelper()
         initCards(numOfRows: numOfRows, numOfCardsPerRow: numOfCardsPerRow);
         raffleCards();
         playBackgorundMusic();
@@ -141,8 +145,8 @@ class GameController: UIViewController {
         
     }
     
-     func handleCard(sender : Card){
-         
+    func handleCard(sender : Card){
+        
         if(firstCard == nil){
             //flip the first card
             sender.flip();
@@ -223,11 +227,17 @@ class GameController: UIViewController {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             
             self.timePassed += 1;
-            self.game_LBL_timer.text  = String(self.timePassed);
+            self.timePassedText =  self.timerHelper.convertTimeToMinutesAndSeconds(timePassed: self.timePassed);
+            self.game_LBL_timer.text = self.timePassedText
+            
             
         }
         
     }
+    
+    
+    
+    
     
     func isVictory() -> Bool {
         
@@ -297,12 +307,13 @@ class GameController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "goToGameOverPage"){
             let gameOverPage = segue.destination as! GameOverController
-             //Set the game parameters
+            //Set the game parameters
             gameOverPage.time = timePassed;
             gameOverPage.moves = moves
             gameOverPage.lastGameNumOfRows = numOfRows
             gameOverPage.lastGameNumOfCardsPerRow = numOfCardsPerRow
-          
+            gameOverPage.name = name
+            
         }
     }
     

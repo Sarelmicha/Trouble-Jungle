@@ -25,11 +25,14 @@ class GameOverController: UIViewController {
     var lastGameNumOfRows: Int!;
     var lastGameNumOfCardsPerRow: Int!;
     var chosenOption : String!
+    var timerHelper : TimerHelper!
+    var name : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gameover_LBL_time.text = "Time :  \(String(time))"
-        gameover_LBL_moves.text = "Moves: \(String(moves))"
+        timerHelper = TimerHelper()
+        gameover_LBL_time.text = timerHelper.convertTimeToMinutesAndSeconds(timePassed: time)
+        gameover_LBL_moves.text = (String(moves))
 
     }
     

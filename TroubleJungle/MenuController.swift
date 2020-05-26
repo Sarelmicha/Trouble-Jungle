@@ -17,7 +17,6 @@ class MenuController: UIViewController {
     
     let EASY_MODE = "Easy"
     let HARD_MODE = "Hard"
-    
     var difficult : String?;
     
     override func viewDidLoad() {
@@ -31,7 +30,7 @@ class MenuController: UIViewController {
         
         difficult = sender.titleLabel!.text
         
-        self.performSegue(withIdentifier: "goToGamePage", sender: self)
+        self.performSegue(withIdentifier: "goToNamePage", sender: self)
         
     }
     
@@ -44,18 +43,10 @@ class MenuController: UIViewController {
     
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "goToGamePage"){
-            let gamePage = segue.destination as! GameController
-             //Set the game parameters
-            if(difficult == EASY_MODE){
-        
-                gamePage.numOfRows = 3;
-                gamePage.numOfCardsPerRow = 4;
-            } else if (difficult == HARD_MODE){
-                
-                gamePage.numOfRows = 4;
-                gamePage.numOfCardsPerRow = 4;
-            }
+        if(segue.identifier == "goToNamePage"){
+            let namePage = segue.destination as! NameController
+            namePage.difficult = difficult
+            
         } else if(segue.identifier == "goToScoresPage"){
             _ = segue.destination as! ScoresController
             
