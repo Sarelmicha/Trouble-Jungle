@@ -30,6 +30,7 @@ class GameOverController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(name)
         timerHelper = TimerHelper()
         gameover_LBL_time.text = timerHelper.convertTimeToMinutesAndSeconds(timePassed: time)
         gameover_LBL_moves.text = (String(moves))

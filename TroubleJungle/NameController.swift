@@ -12,6 +12,7 @@ class NameController: UIViewController {
     
     let EASY_MODE = "Easy"
     let HARD_MODE = "Hard"
+    let MAX_NAME_LENGTH : Int = 10
     var difficult : String!
     var name : String!
     
@@ -27,8 +28,10 @@ class NameController: UIViewController {
     @IBAction func onReadyButtonPressed(_ sender: UIButton) {
         
         name = name_TEXTFIELD_nameHolder.text
-        if(name?.count == 0){
+        if(name.isEmpty){
             name = "Player"
+        } else if(name.count > MAX_NAME_LENGTH){
+            name = String(name.prefix(MAX_NAME_LENGTH))
         }
         
           self.performSegue(withIdentifier: "goToGamePage", sender: self)
