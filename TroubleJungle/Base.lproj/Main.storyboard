@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="58O-cT-LZE">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,52 +12,61 @@
             <objects>
                 <viewController storyboardIdentifier="menu_vc" id="58O-cT-LZE" userLabel="Menu Controller" customClass="MenuController" customModule="TroubleJungle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="awZ-ym-fOq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="lJH-l4-e58">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-02-7Jw" userLabel="Menu">
-                                <rect key="frame" x="25" y="227.66666666666663" width="364" height="441"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-02-7Jw" userLabel="Menu">
+                                <rect key="frame" x="266" y="31.666666666666657" width="364" height="351"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trouble Jungle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pha-9a-mLf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Trouble Jungle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pha-9a-mLf">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="105"/>
                                         <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="90"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Puz-Jq-VWw">
-                                        <rect key="frame" x="0.0" y="135.00000000000003" width="364" height="82"/>
-                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
-                                        <state key="normal" title="Easy">
-                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onDifficultButtonPressed:" destination="58O-cT-LZE" eventType="touchUpInside" id="uoT-rf-fY0"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6O-z8-Mp3">
-                                        <rect key="frame" x="0.0" y="247" width="364" height="82"/>
-                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
-                                        <state key="normal" title="Hard">
-                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onDifficultButtonPressed:" destination="58O-cT-LZE" eventType="touchUpInside" id="jSN-4d-eV5"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftR-Af-39b">
-                                        <rect key="frame" x="0.0" y="359" width="364" height="82"/>
-                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
-                                        <state key="normal" title="Scrores">
-                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onScoresButtonPressed:" destination="58O-cT-LZE" eventType="touchUpInside" id="tDh-TG-nEo"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lTr-xr-krc" userLabel="Buttons Holder">
+                                        <rect key="frame" x="0.0" y="105" width="364" height="246"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Puz-Jq-VWw">
+                                                <rect key="frame" x="0.0" y="0.0" width="364" height="82"/>
+                                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
+                                                <state key="normal" title="Easy">
+                                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onDifficultButtonPressed:" destination="58O-cT-LZE" eventType="touchUpInside" id="uoT-rf-fY0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6O-z8-Mp3">
+                                                <rect key="frame" x="0.0" y="82" width="364" height="82"/>
+                                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
+                                                <state key="normal" title="Hard">
+                                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onDifficultButtonPressed:" destination="58O-cT-LZE" eventType="touchUpInside" id="jSN-4d-eV5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftR-Af-39b">
+                                                <rect key="frame" x="0.0" y="164.00000000000003" width="364" height="82"/>
+                                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
+                                                <state key="normal" title="Scrores">
+                                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onScoresButtonPressed:" destination="58O-cT-LZE" eventType="touchUpInside" id="tDh-TG-nEo"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <variation key="heightClass=compact-widthClass=regular" axis="vertical"/>
+                                    </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="lTr-xr-krc" firstAttribute="centerX" secondItem="7Wm-02-7Jw" secondAttribute="centerX" id="kAf-4m-JWt"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -89,49 +98,50 @@
             <objects>
                 <viewController id="bma-eb-ceq" userLabel="NameController" customClass="NameController" customModule="TroubleJungle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b35-X9-2gW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="xG7-06-eBy">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R58-vf-PBR">
-                                <rect key="frame" x="26" y="407.33333333333331" width="362.33333333333331" height="81.666666666666686"/>
-                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="70"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nkt-pd-329">
-                                <rect key="frame" x="107" y="499" width="200" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="X5b-oM-vhA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfp-k3-f3S">
-                                <rect key="frame" x="136.66666666666666" y="553" width="140.99999999999997" height="82"/>
-                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
-                                <state key="normal" title="Lets go!">
-                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="onReadyButtonPressed:" destination="bma-eb-ceq" eventType="touchUpInside" id="VDl-Df-xcw"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zNF-3Q-Wak">
+                                <rect key="frame" x="267" y="93.333333333333314" width="362.33333333333326" height="227.66666666666669"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R58-vf-PBR">
+                                        <rect key="frame" x="0.0" y="0.0" width="362.33333333333331" height="81.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="70"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nkt-pd-329">
+                                        <rect key="frame" x="81" y="96.666666666666671" width="200" height="34.000000000000014"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="X5b-oM-vhA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfp-k3-f3S">
+                                        <rect key="frame" x="110.66666666666669" y="145.66666666666669" width="141" height="82"/>
+                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
+                                        <state key="normal" title="Lets go!">
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onReadyButtonPressed:" destination="bma-eb-ceq" eventType="touchUpInside" id="VDl-Df-xcw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="nkt-pd-329" firstAttribute="centerX" secondItem="b35-X9-2gW" secondAttribute="centerX" id="0mN-gf-uPa"/>
                             <constraint firstAttribute="bottom" secondItem="xG7-06-eBy" secondAttribute="bottom" id="23o-HH-PVZ"/>
-                            <constraint firstItem="R58-vf-PBR" firstAttribute="centerX" secondItem="b35-X9-2gW" secondAttribute="centerX" id="3PR-pD-UYi"/>
-                            <constraint firstItem="nkt-pd-329" firstAttribute="top" secondItem="R58-vf-PBR" secondAttribute="bottom" constant="10" id="5y1-Ws-kdg"/>
-                            <constraint firstItem="xfp-k3-f3S" firstAttribute="top" secondItem="nkt-pd-329" secondAttribute="bottom" constant="20" id="CpG-ny-OIb"/>
+                            <constraint firstItem="zNF-3Q-Wak" firstAttribute="centerY" secondItem="b35-X9-2gW" secondAttribute="centerY" id="9T5-cZ-BcT"/>
                             <constraint firstItem="xG7-06-eBy" firstAttribute="top" secondItem="b35-X9-2gW" secondAttribute="top" id="EwJ-aY-BSM"/>
-                            <constraint firstItem="xfp-k3-f3S" firstAttribute="centerX" secondItem="b35-X9-2gW" secondAttribute="centerX" id="FOl-Hl-xpv"/>
                             <constraint firstItem="xG7-06-eBy" firstAttribute="leading" secondItem="b35-X9-2gW" secondAttribute="leading" id="Kf8-kg-1CP"/>
-                            <constraint firstItem="R58-vf-PBR" firstAttribute="centerY" secondItem="b35-X9-2gW" secondAttribute="centerY" id="c8r-qv-oyB"/>
                             <constraint firstAttribute="trailing" secondItem="xG7-06-eBy" secondAttribute="trailing" id="oBr-45-Bpm"/>
+                            <constraint firstItem="zNF-3Q-Wak" firstAttribute="centerX" secondItem="b35-X9-2gW" secondAttribute="centerX" id="p2n-TA-JnP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BcL-h6-GTL"/>
                     </view>
@@ -150,58 +160,72 @@
             <objects>
                 <viewController id="6Ce-6Z-uBG" userLabel="Score Controller" customClass="ScoresController" customModule="TroubleJungle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mDC-bo-tUJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="V21-QE-oBF">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NT8-co-gP5">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="score_cell" id="T2I-Jg-mKE" customClass="MyCustomCell" customModule="TroubleJungle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="52.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="28" width="896" height="60.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T2I-Jg-mKE" id="Tx4-zG-thK">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="52.333332061767578"/>
+                                            <rect key="frame" x="44" y="0.0" width="808" height="60.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBD-V6-pNY" userLabel="CellLBL score">
-                                                    <rect key="frame" x="342" y="15.666666666666664" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBD-V6-pNY" userLabel="CellLBL score">
+                                                    <rect key="frame" x="751" y="12.666666666666664" width="47" height="35"/>
+                                                    <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APl-c4-ym4" userLabel="CellLBL name">
-                                                    <rect key="frame" x="51.333333333333343" y="10.999999999999998" width="311.66666666666663" height="30.333333333333329"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="3fS-ll-LJr"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="HVw-jl-mfA">
+                                                    <rect key="frame" x="90" y="5" width="641" height="44.333333333333336"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APl-c4-ym4" userLabel="CellLBL name">
+                                                            <rect key="frame" x="0.0" y="0.0" width="56" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="3fS-ll-LJr"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="35"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CellLBL location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2x-Cg-aOt">
+                                                            <rect key="frame" x="0.0" y="29.999999999999996" width="100.66666666666667" height="14.333333333333332"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crocodile" translatesAutoresizingMaskIntoConstraints="NO" id="tFR-jZ-86Z">
-                                                    <rect key="frame" x="9.9999999999999982" y="0.0" width="31.333333333333329" height="52.333333333333336"/>
+                                                    <rect key="frame" x="10" y="0.0" width="60.000000000000114" height="60.333333333333336"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="MdV-s4-JSI"/>
+                                                        <constraint firstAttribute="width" constant="60" id="gSn-7H-ZAq"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="tFR-jZ-86Z" firstAttribute="top" secondItem="Tx4-zG-thK" secondAttribute="top" id="0H0-G3-rfk"/>
-                                                <constraint firstItem="APl-c4-ym4" firstAttribute="centerY" secondItem="tFR-jZ-86Z" secondAttribute="centerY" id="11r-vM-Uan"/>
-                                                <constraint firstItem="APl-c4-ym4" firstAttribute="leading" secondItem="tFR-jZ-86Z" secondAttribute="trailing" constant="10" id="GEI-Nl-Nbb"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="GBD-V6-pNY" secondAttribute="trailing" constant="10" id="Lno-IE-2Vi"/>
-                                                <constraint firstItem="tFR-jZ-86Z" firstAttribute="width" secondItem="APl-c4-ym4" secondAttribute="width" multiplier="0.1" id="Spc-Rc-F2k"/>
-                                                <constraint firstItem="APl-c4-ym4" firstAttribute="centerX" secondItem="Tx4-zG-thK" secondAttribute="centerX" id="T8L-hU-wQ8"/>
+                                                <constraint firstAttribute="trailing" secondItem="GBD-V6-pNY" secondAttribute="trailing" constant="10" id="Ep1-96-dgl"/>
+                                                <constraint firstItem="HVw-jl-mfA" firstAttribute="top" secondItem="Tx4-zG-thK" secondAttribute="topMargin" constant="-6" id="F5m-ZR-Y8g"/>
+                                                <constraint firstItem="GBD-V6-pNY" firstAttribute="leading" secondItem="HVw-jl-mfA" secondAttribute="trailing" constant="20" id="S8M-gH-upy"/>
                                                 <constraint firstAttribute="bottom" secondItem="tFR-jZ-86Z" secondAttribute="bottom" id="gpA-Wc-K00"/>
-                                                <constraint firstItem="APl-c4-ym4" firstAttribute="top" secondItem="Tx4-zG-thK" secondAttribute="topMargin" id="ith-AT-fL4"/>
                                                 <constraint firstItem="GBD-V6-pNY" firstAttribute="centerY" secondItem="Tx4-zG-thK" secondAttribute="centerY" id="kCc-Ul-6fy"/>
                                                 <constraint firstItem="tFR-jZ-86Z" firstAttribute="leading" secondItem="Tx4-zG-thK" secondAttribute="leading" constant="10" id="u3W-zl-gbN"/>
+                                                <constraint firstItem="HVw-jl-mfA" firstAttribute="leading" secondItem="tFR-jZ-86Z" secondAttribute="trailing" constant="20" id="yVb-eQ-oSq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="cell_IMG_scoreImage" destination="tFR-jZ-86Z" id="T1l-ZR-uyg"/>
+                                            <outlet property="cell_LBL_location" destination="X2x-Cg-aOt" id="K2b-Y3-fes"/>
                                             <outlet property="cell_LBL_name" destination="APl-c4-ym4" id="WYS-x7-UGP"/>
                                             <outlet property="cell_LBL_score" destination="GBD-V6-pNY" id="6d3-hA-chZ"/>
                                         </connections>
@@ -216,11 +240,17 @@
                             <constraint firstAttribute="trailing" secondItem="V21-QE-oBF" secondAttribute="trailing" id="DDP-Z3-C4o"/>
                             <constraint firstItem="NT8-co-gP5" firstAttribute="leading" secondItem="mDC-bo-tUJ" secondAttribute="leading" id="Dhc-Qe-Kvh"/>
                             <constraint firstAttribute="trailing" secondItem="NT8-co-gP5" secondAttribute="trailing" id="TUr-om-AcY"/>
+                            <constraint firstItem="NT8-co-gP5" firstAttribute="leading" secondItem="C6f-14-6Gm" secondAttribute="leading" id="aEk-lG-agV"/>
                             <constraint firstItem="NT8-co-gP5" firstAttribute="top" secondItem="mDC-bo-tUJ" secondAttribute="top" id="jTD-5Y-EDV"/>
                             <constraint firstItem="V21-QE-oBF" firstAttribute="top" secondItem="mDC-bo-tUJ" secondAttribute="top" id="qWC-4z-38t"/>
                             <constraint firstItem="V21-QE-oBF" firstAttribute="leading" secondItem="mDC-bo-tUJ" secondAttribute="leading" id="ty0-sW-jF0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C6f-14-6Gm"/>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="aEk-lG-agV"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="scores_LST_scores" destination="NT8-co-gP5" id="Sp9-X0-Dd9"/>
@@ -235,14 +265,14 @@
             <objects>
                 <viewController id="US4-op-GND" userLabel="Game Over Controller" customClass="GameOverController" customModule="TroubleJungle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9rG-EK-40R">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="LFp-o6-s8Z">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="iae-te-Fqc">
-                                <rect key="frame" x="81.333333333333329" y="208" width="251.33333333333337" height="480"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iae-te-Fqc">
+                                <rect key="frame" x="322.33333333333331" y="20" width="251.33333333333331" height="374"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvN-iv-RHS">
                                         <rect key="frame" x="0.0" y="0.0" width="251.33333333333334" height="93.333333333333329"/>
@@ -250,8 +280,8 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ5-3Y-UoF">
-                                        <rect key="frame" x="72.000000000000028" y="118.33333333333331" width="107.33333333333334" height="126.66666666666669"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ5-3Y-UoF">
+                                        <rect key="frame" x="72" y="93.333333333333314" width="107.33333333333331" height="116.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWQ-IY-WWf">
                                                 <rect key="frame" x="0.0" y="0.0" width="107.33333333333333" height="58.333333333333336"/>
@@ -260,15 +290,15 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m17-na-B9Z">
-                                                <rect key="frame" x="0.0" y="68.333333333333371" width="107.33333333333333" height="58.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="58.333333333333329" width="107.33333333333333" height="58.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="50"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="O5X-yX-uo2">
-                                        <rect key="frame" x="34.666666666666671" y="270" width="182" height="210"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="O5X-yX-uo2">
+                                        <rect key="frame" x="34.666666666666686" y="210" width="182" height="164"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdQ-bh-lrP">
                                                 <rect key="frame" x="0.0" y="0.0" width="182" height="82"/>
@@ -281,7 +311,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7IQ-gs-0fC">
-                                                <rect key="frame" x="0.0" y="128" width="182" height="82"/>
+                                                <rect key="frame" x="0.0" y="82" width="182" height="82"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
                                                 <state key="normal" title="New Game">
                                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -306,7 +336,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yhh-WS-2qF"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4oY-P8-q7W"/>
                     <connections>
                         <outlet property="gameover_BTN_newGame" destination="7IQ-gs-0fC" id="mMP-99-KMk"/>
                         <outlet property="gameover_BTN_restart" destination="IdQ-bh-lrP" id="UbE-ug-q6m"/>
@@ -325,24 +354,24 @@
             <objects>
                 <viewController storyboardIdentifier="game_vc" id="BYZ-38-t0r" customClass="GameController" customModule="TroubleJungle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Rl9-Ah-ErU">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PCO-SX-cZi" userLabel="Cards Holder">
-                                <rect key="frame" x="17" y="198" width="380" height="500"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="650" verticalCompressionResistancePriority="650" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PCO-SX-cZi" userLabel="Cards Holder">
+                                <rect key="frame" x="263" y="7" width="370" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="A2I-va-BzR"/>
                                     <constraint firstAttribute="width" constant="380" id="IQh-Nq-wT7"/>
                                     <constraint firstAttribute="height" constant="350" id="Mfk-P9-W0h"/>
                                     <constraint firstAttribute="width" constant="370" id="Pg1-AP-Prw"/>
-                                    <constraint firstAttribute="width" constant="600" id="TXt-cx-cN2"/>
+                                    <constraint firstAttribute="width" constant="550" id="TXt-cx-cN2"/>
                                     <constraint firstAttribute="width" constant="250" id="cMm-dU-wM1"/>
                                     <constraint firstAttribute="height" constant="500" id="g1Z-s9-KLF"/>
                                     <constraint firstAttribute="height" constant="400" id="lNS-eT-llj"/>
-                                    <constraint firstAttribute="height" constant="750" id="qea-Qz-9BN"/>
+                                    <constraint firstAttribute="height" constant="700" id="qea-Qz-9BN"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -384,44 +413,25 @@
                                 </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zNA-0e-RHc" userLabel="Bottom Holder">
-                                <rect key="frame" x="-43" y="732" width="500" height="140"/>
+                                <rect key="frame" x="73" y="263" width="750" height="140"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ejG-Be-MFR" userLabel="Moves Keeper">
-                                        <rect key="frame" x="0.0" y="0.0" width="500" height="58.333333333333336"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSs-OY-UlH">
-                                                <rect key="frame" x="0.0" y="0.0" width="500" height="58.333333333333336"/>
-                                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="50"/>
-                                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="fSs-OY-UlH" firstAttribute="centerX" secondItem="ejG-Be-MFR" secondAttribute="centerX" id="1S0-bC-NQg"/>
-                                            <constraint firstAttribute="width" constant="500" id="ntJ-g8-Q59"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KN2-R4-znU" userLabel="Time Holder">
-                                        <rect key="frame" x="0.0" y="68.333333333333371" width="500" height="71.666666666666686"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd9-3j-K0i">
-                                                <rect key="frame" x="0.0" y="0.0" width="500" height="71.666666666666671"/>
-                                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="50"/>
-                                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="jd9-3j-K0i" firstAttribute="centerX" secondItem="KN2-R4-znU" secondAttribute="centerX" id="9hr-c7-nK9"/>
-                                            <constraint firstAttribute="width" constant="500" id="Hqg-AA-FRq"/>
-                                        </constraints>
-                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSs-OY-UlH">
+                                        <rect key="frame" x="0.0" y="81.666666666666686" width="107.33333333333333" height="58.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="50"/>
+                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd9-3j-K0i">
+                                        <rect key="frame" x="642.66666666666663" y="81.666666666666686" width="107.33333333333337" height="58.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="50"/>
+                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="8zK-wy-FmA"/>
                                     <constraint firstAttribute="width" constant="750" id="BK0-FZ-NxQ"/>
-                                    <constraint firstItem="KN2-R4-znU" firstAttribute="top" secondItem="zNA-0e-RHc" secondAttribute="top" constant="68.333333333333371" id="REk-i9-Ipk"/>
-                                    <constraint firstItem="ejG-Be-MFR" firstAttribute="leading" secondItem="zNA-0e-RHc" secondAttribute="leading" id="yj8-VE-4fw"/>
+                                    <constraint firstItem="fSs-OY-UlH" firstAttribute="width" secondItem="jd9-3j-K0i" secondAttribute="width" id="Uh2-wa-MrE"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -433,11 +443,12 @@
                                         <include reference="BK0-FZ-NxQ"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=compact-widthClass=regular">
+                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal">
                                     <mask key="constraints">
                                         <include reference="BK0-FZ-NxQ"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" axis="vertical"/>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
                                         <include reference="BK0-FZ-NxQ"/>
@@ -478,6 +489,6 @@
         <image name="crocodile" width="392" height="470"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HZC-Gb-v7J"/>
+        <segue reference="7K8-lc-sgf"/>
     </inferredMetricsTieBreakers>
 </document>

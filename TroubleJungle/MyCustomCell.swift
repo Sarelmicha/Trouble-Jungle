@@ -14,5 +14,7 @@ class MyCustomCell: UITableViewCell {
   
     @IBOutlet weak var cell_LBL_score: UILabel!
     @IBOutlet weak var cell_LBL_name: UILabel!
+    @IBOutlet weak var cell_LBL_location: UILabel!
     @IBOutlet weak var cell_IMG_scoreImage: UIImageView!
+    
 }

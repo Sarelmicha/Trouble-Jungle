@@ -74,12 +74,13 @@ extension MenuController: CLLocationManagerDelegate {
         if let location = locations.last {
             locationManager.stopUpdatingLocation()
             self.myLocation = MyLocation(lat:location.coordinate.latitude, lng: location.coordinate.latitude)
-            print("got Location: \(myLocation.lat) \(myLocation.lng)")
+            print("got Location: \(String(describing: myLocation.lat)) \(String(describing: myLocation.lng))")
         }
     }
     
     //Do somthing when an error occured when trying fetch location
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error=\(error)")
+        self.myLocation = MyLocation(lat: 0, lng: 0)
     }
 }

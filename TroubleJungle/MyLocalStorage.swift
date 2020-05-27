@@ -17,7 +17,6 @@ class MyLocalStorage {
         //load the data from local storage and convert it the list of HighScore
         
         let highScoresJson = UserDefaults.standard.string(forKey: HIGH_SCORES_KEY)
-        print("highsocres : \(highScoresJson)")
         
         if let safeHighScoresJson = highScoresJson {
             return Converter.fromJsonToHighScoreList(highScoreJson: safeHighScoresJson)

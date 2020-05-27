@@ -92,6 +92,8 @@ class GameOverController: UIViewController {
             let gamePage = segue.destination as! GameController
             gamePage.numOfRows = lastGameNumOfRows
             gamePage.numOfCardsPerRow = lastGameNumOfCardsPerRow
+            gamePage.name = userHighScore.name
+            gamePage.myLocation = userHighScore.location
             
             
         } else if(segue.identifier == "goToMenuPage"){

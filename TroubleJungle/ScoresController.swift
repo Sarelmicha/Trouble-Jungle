@@ -9,7 +9,7 @@
 import UIKit
 
 class ScoresController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+        
     @IBOutlet weak var scores_LST_scores: UITableView!
     
     var animalsImages = [#imageLiteral(resourceName: "crocodile"),#imageLiteral(resourceName: "zebra"),#imageLiteral(resourceName: "sloth"),#imageLiteral(resourceName: "tiger"),#imageLiteral(resourceName: "gorilla"),#imageLiteral(resourceName: "monkey"),#imageLiteral(resourceName: "frog"),#imageLiteral(resourceName: "beatle")]
@@ -40,8 +40,10 @@ class ScoresController: UIViewController, UITableViewDelegate, UITableViewDataSo
         var cell : MyCustomCell? = self.scores_LST_scores.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as? MyCustomCell
         
         cell?.cell_LBL_score?.text = String(self.highScores[indexPath.row].time)
-        cell?.cell_LBL_name?.text = String(self.highScores[indexPath.row].name)
+        cell?.cell_LBL_name?.text = String(self.highScores[indexPath.row].name).lowercased()
+        cell?.cell_LBL_location.text = "\(String(describing: self.highScores[indexPath.row].location.lat!)) -  \(String(describing: self.highScores[indexPath.row].location.lng!))"
         cell?.cell_IMG_scoreImage?.image = animalsImages[indexPath.row % animalsImages.count]
+        
         
         
         if(cell == nil){
