@@ -225,7 +225,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crocodile" translatesAutoresizingMaskIntoConstraints="NO" id="tFR-jZ-86Z">
-                                                    <rect key="frame" x="10" y="0.0" width="60.000000000000114" height="60.333333333333336"/>
+                                                    <rect key="frame" x="10" y="0.0" width="60" height="60.333333333333336"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="MdV-s4-JSI"/>
                                                         <constraint firstAttribute="width" constant="60" id="gSn-7H-ZAq"/>
@@ -254,7 +254,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yzf-Eq-N0u">
-                                <rect key="frame" x="30" y="60" width="32" height="32"/>
+                                <rect key="frame" x="30" y="60" width="64" height="64"/>
                                 <state key="normal" backgroundImage="return"/>
                                 <connections>
                                     <action selector="onBackButtonPressed:" destination="6Ce-6Z-uBG" eventType="touchUpInside" id="aMw-zR-adm"/>
