@@ -9,8 +9,10 @@
 import UIKit
 
 class ScoresController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-        
+    
     @IBOutlet weak var scores_LST_scores: UITableView!
+    @IBOutlet weak var scores_BTN_back: UIButton!
+    
     
     var animalsImages = [#imageLiteral(resourceName: "crocodile"),#imageLiteral(resourceName: "zebra"),#imageLiteral(resourceName: "sloth"),#imageLiteral(resourceName: "tiger"),#imageLiteral(resourceName: "gorilla"),#imageLiteral(resourceName: "monkey"),#imageLiteral(resourceName: "frog"),#imageLiteral(resourceName: "beatle")]
     var highScores : [HighScore]!
@@ -26,6 +28,16 @@ class ScoresController: UIViewController, UITableViewDelegate, UITableViewDataSo
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func onBackButtonPressed(_ sender: UIButton) {
+        
+        print("im here!");
+        
+       if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
     func setupList(){
         
         scores_LST_scores.delegate = self
@@ -41,7 +53,7 @@ class ScoresController: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         cell?.cell_LBL_score?.text = String(self.highScores[indexPath.row].time)
         cell?.cell_LBL_name?.text = String(self.highScores[indexPath.row].name).lowercased()
-        cell?.cell_LBL_location.text = "\(String(describing: self.highScores[indexPath.row].location.lat!)) -  \(String(describing: self.highScores[indexPath.row].location.lng!))"
+        cell?.cell_LBL_date.text = "\(self.highScores[indexPath.row].date)"
         cell?.cell_IMG_scoreImage?.image = animalsImages[indexPath.row % animalsImages.count]
         
         

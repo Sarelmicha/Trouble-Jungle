@@ -20,6 +20,7 @@ class NameController: UIViewController {
     @IBOutlet weak var name_TEXTFIELD_nameHolder: UITextField!
     @IBOutlet weak var name_BTN_readyButton: UIButton!
     
+    @IBOutlet weak var name_BTN_back: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +38,15 @@ class NameController: UIViewController {
         
           self.performSegue(withIdentifier: "goToGamePage", sender: self)
         
-        
+    }
+    
+    @IBAction func onBackButtonPressed(_ sender: UIButton) {
+                
+       if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     

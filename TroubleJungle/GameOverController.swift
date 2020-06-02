@@ -60,12 +60,21 @@ class GameOverController: UIViewController {
     
     func insertNewHighScoreToHighScores(){
         
+        
+        
         if(highScores.isEmpty){
+            print("empty")
             highScores.append(userHighScore)
             return
         }
         
-        insertToListByTime()
+        print("not empty")
+        print("size is \(highScores.count)")
+        
+        if(!insertToListByTime() && highScores.count < 10){
+            highScores.insert(userHighScore, at: highScores.count)
+
+        }
         
         if(highScores.count > 10){
             //DELETE the 11 highscore
@@ -74,11 +83,15 @@ class GameOverController: UIViewController {
         
     }
     
-    func insertToListByTime(){
+    func insertToListByTime() -> Bool{
         for i in  0 ..< highScores.count {
             if(userHighScore.time < highScores[i].time){
-                highScores.insert(userHighScore, at: i)            }
+                highScores.insert(userHighScore, at: i)
+                return true
+            }
         }
+        
+        return false
     }
     
     

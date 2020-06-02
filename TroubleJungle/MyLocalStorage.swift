@@ -16,6 +16,10 @@ class MyLocalStorage {
         
         //load the data from local storage and convert it the list of HighScore
         
+        
+        //Reset file ofr tests
+        //UserDefaults.standard.removePersistentDomain(forName: HIGH_SCORES_KEY)
+        
         let highScoresJson = UserDefaults.standard.string(forKey: HIGH_SCORES_KEY)
         
         if let safeHighScoresJson = highScoresJson {

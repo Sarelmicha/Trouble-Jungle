@@ -16,6 +16,7 @@ class GameController: UIViewController {
     
     @IBOutlet weak var game_STACKVIEW_cardsHolder: UIStackView!
     
+    @IBOutlet weak var game_BTN_back: UIButton!
     
     
     let MAX_IDENTICAL_CARDS :Int = 2
@@ -50,7 +51,18 @@ class GameController: UIViewController {
         
     }
     
+    @IBAction func onBackButtonPressed(_ sender: UIButton) {
+                
+       if let nav = self.navigationController {
+            nav.popToRootViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func flip(_ sender: Card) {
+        
+        print("im here in flip")
         
         if(!isClickable){
             // Player can't click a card - waiting for other cards to flip
@@ -314,7 +326,7 @@ class GameController: UIViewController {
             gameOverPage.moves = moves
             gameOverPage.lastGameNumOfRows = numOfRows
             gameOverPage.lastGameNumOfCardsPerRow = numOfCardsPerRow
-            gameOverPage.userHighScore = HighScore(name: name, time: timePassed, location: myLocation)
+            gameOverPage.userHighScore = HighScore(name: name, time: timePassed, location: myLocation,date: Date())
         }
     }
     
