@@ -7,37 +7,79 @@
 //
 
 import UIKit
+import MapKit
 
 class ScoresController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var scores_LST_scores: UITableView!
     @IBOutlet weak var scores_BTN_back: UIButton!
     
+    @IBOutlet weak var scores_MAPVIEW_map: MKMapView!
     
     var animalsImages = [#imageLiteral(resourceName: "crocodile"),#imageLiteral(resourceName: "zebra"),#imageLiteral(resourceName: "sloth"),#imageLiteral(resourceName: "tiger"),#imageLiteral(resourceName: "gorilla"),#imageLiteral(resourceName: "monkey"),#imageLiteral(resourceName: "frog"),#imageLiteral(resourceName: "beatle")]
     var highScores : [HighScore]!
     let cellReuseIdentifier = "score_cell"
+    var newCamera: MKMapCamera!
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         //Read from local storage the highscores
+        scores_MAPVIEW_map.showsUserLocation = true
+        //Set the corner of the map to be rounded.
+        scores_MAPVIEW_map.layer.cornerRadius = 25.0
         highScores = MyLocalStorage.getDataFromLocalStorage()
+        addAnnotationPoints()
         setupList()
+        
+        
+        
         
         // Do any additional setup after loading the view.
     }
     
     @IBAction func onBackButtonPressed(_ sender: UIButton) {
         
-        print("im here!");
         
-       if let nav = self.navigationController {
+        if let nav = self.navigationController {
             nav.popViewController(animated: true)
         } else {
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
+    
+    
+    func addAnnotationPoints(){
+        
+            
+        for highScore in highScores{
+            
+            
+            let point = MKPointAnnotation()
+            
+            let pointlatitude = Double(highScore.location.lat!)
+            let pointlongitude = Double(highScore.location.lng!)
+            point.title = highScore.name
+            
+            point.coordinate = CLLocationCoordinate2DMake(pointlatitude ,pointlongitude)
+            scores_MAPVIEW_map.addAnnotation(point)
+            
+            
+        }
+        
+    }
+    
+    func showAnotation(index : Int){
+        
+       
+        newCamera = MKMapCamera(lookingAtCenter: CLLocationCoordinate2D(latitude: highScores[index].location.lat!, longitude: highScores[index].location.lng!), fromDistance: 1000.0, pitch: 90.0, heading: 180.0)
+        self.scores_MAPVIEW_map.setCamera(newCamera, animated: true)
+        
+
+    }
+    
     func setupList(){
         
         scores_LST_scores.delegate = self
@@ -55,8 +97,7 @@ class ScoresController: UIViewController, UITableViewDelegate, UITableViewDataSo
         cell?.cell_LBL_name?.text = String(self.highScores[indexPath.row].name).lowercased()
         cell?.cell_LBL_date.text = "\(self.highScores[indexPath.row].date)"
         cell?.cell_IMG_scoreImage?.image = animalsImages[indexPath.row % animalsImages.count]
-        
-        
+    
         
         if(cell == nil){
             cell = MyCustomCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: cellReuseIdentifier)
@@ -65,16 +106,13 @@ class ScoresController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return cell!
     }
     
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("here bitchhhhh")
+        showAnotation(index: indexPath.row)
+    }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+
     
 }
 
