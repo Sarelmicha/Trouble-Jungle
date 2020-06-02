@@ -73,11 +73,10 @@ class ScoresController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func showAnotation(index : Int){
         
-       
+
         newCamera = MKMapCamera(lookingAtCenter: CLLocationCoordinate2D(latitude: highScores[index].location.lat!, longitude: highScores[index].location.lng!), fromDistance: 500.0, pitch: 90.0, heading: 180.0)
         self.scores_MAPVIEW_map.setCamera(newCamera, animated: true)
-        
-
+    
     }
     
     func setupList(){
@@ -107,12 +106,8 @@ class ScoresController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("here bitchhhhh")
         showAnotation(index: indexPath.row)
     }
-    
-    
-
     
 }
 
