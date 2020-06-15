@@ -105,7 +105,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zNF-3Q-Wak">
-                                <rect key="frame" x="267" y="93.333333333333314" width="362.33333333333326" height="227.66666666666669"/>
+                                <rect key="frame" x="267" y="93.333333333333329" width="362.33333333333326" height="227.66666666666669"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R58-vf-PBR">
                                         <rect key="frame" x="0.0" y="0.0" width="362.33333333333331" height="81.666666666666671"/>
@@ -261,7 +261,7 @@
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="UUJ-cv-kaA">
-                                <rect key="frame" x="458" y="123.33333333333337" width="428" height="280.66666666666663"/>
+                                <rect key="frame" x="458" y="123.33333333333334" width="428" height="280.66666666666663"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -473,7 +473,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd9-3j-K0i">
                                         <rect key="frame" x="610" y="81.666666666666686" width="140" height="58.333333333333343"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="140" id="X4r-bw-EFR"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="X4r-bw-EFR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="50"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
